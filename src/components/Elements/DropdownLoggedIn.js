@@ -15,7 +15,7 @@ export const DropdownLoggedIn = ({ setDropdown }) => {
 
         }
         fetchData();
-    }, [])
+    }, [])//eslint-disable-line
 
 
 

@@ -5,7 +5,7 @@ function getSession() {
 
     return { token, cbid };
 }
-//eslint-disable-line
+
 
 export async function getUser() {
 
@@ -21,7 +21,7 @@ export async function getUser() {
     const response = await fetch(`${process.env.REACT_APP_HOST}/600/users/${sessionData.cbid}`, requestOptions);
 
     if (!response.ok) {
-        throw { message: response.statusText, status: response.status };
+        throw { message: response.statusText, status: response.status };//eslint-disable-line
     }
     const data = await response.json();
     return data;
@@ -35,7 +35,7 @@ export async function getUserOrders() {
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${sessionData.token}` }
     });
     if (!response.ok) {
-        throw { message: response.statusText, status: response.status };
+        throw { message: response.statusText, status: response.status };//eslint-disable-line
     }
     const data = await response.json();
     return data;
@@ -63,7 +63,7 @@ export async function createOrder(user, total, cartList) {
         }
     );
     if (!response.ok) {
-        throw { message: response.statusText, status: response.status };
+        throw { message: response.statusText, status: response.status };//eslint-disable-line
     }
     const data = await response.json();
     return data
